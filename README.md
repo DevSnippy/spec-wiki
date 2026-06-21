@@ -1,6 +1,8 @@
 # SpecWiki
 
-A Tauri v2 desktop app that renders any [Spec Kit](https://github.com/speckit) project as a fully cross-linked wiki — Wikipedia-style articles, talk pages, git history, search, and more. All local, read-only, no servers.
+A Tauri v2 desktop app that renders any [Spec Kit](https://github.com/github/spec-kit) project as a fully cross-linked wiki — Wikipedia-style articles, talk pages, git history, search, and more. All local, read-only, no servers.
+
+![SpecWiki main page showing the project constitution rendered as formatted markdown](screenshots/main-page.png)
 
 ## Features
 
