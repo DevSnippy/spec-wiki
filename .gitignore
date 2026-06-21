@@ -1,0 +1,15 @@
+node_modules
+dist
+_ds_bundle.js
+.env
+.env.*
+!.env.example
+src-tauri/target
+*.log
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*.rs.bk
+.vscode/
+.idea/

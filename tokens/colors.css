@@ -1,0 +1,83 @@
+/* ============================================================
+   SpecWiki — Colors
+   Faithful to Wikipedia's Vector 2022 skin palette, plus the
+   exact link/status values called out in the SpecWiki spec.
+   ============================================================ */
+:root {
+  /* --- Base neutrals (Wikimedia "base" ramp) --- */
+  --color-base-0:   #000000;
+  --color-base-10:  #202122; /* primary body text */
+  --color-base-20:  #404244;
+  --color-base-30:  #54595d; /* secondary / muted text */
+  --color-base-50:  #72777d; /* placeholder, captions */
+  --color-base-70:  #a2a9b1; /* default borders, rules */
+  --color-base-80:  #c8ccd1; /* subtle borders */
+  --color-base-90:  #eaecf0; /* table header fill, dividers */
+  --color-base-95:  #f8f9fa; /* sidebar + code surface */
+  --color-base-100: #ffffff;
+
+  /* --- Surfaces --- */
+  --surface-page:    #ffffff; /* article content column */
+  --surface-canvas:  #ffffff; /* app backdrop behind content */
+  --surface-sidebar: #f8f9fa; /* left chrome, infobox, TOC */
+  --surface-subtle:  #f8f9fa; /* code blocks, well rows */
+  --surface-header:  #eaecf0; /* wikitable header row */
+  --surface-accent:  #eaf3ff; /* notice / message-box blue */
+
+  /* --- Links (spec §5 — Wikipedia legacy link colors) --- */
+  --link:          #0645ad; /* unvisited internal */
+  --link-hover:    #447ff5;
+  --link-visited:  #795cb2; /* visited */
+  --link-red:      #ba0000; /* page does not exist (red link) */
+  --link-external: #0645ad; /* external — paired with ↗ glyph */
+
+  /* --- Borders & rules --- */
+  --border-default: #a2a9b1; /* heading underline, infobox, TOC */
+  --border-subtle:  #c8ccd1;
+  --border-faint:   #eaecf0;
+
+  /* --- Status badges (spec §4 infobox) ---
+     Progression: Draft → Planned → Ready → Implemented */
+  --status-draft-fg:   #54595d;
+  --status-draft-bg:   #eaecf0;
+  --status-draft-bd:   #c8ccd1;
+
+  --status-planned-fg: #2a4b8d;
+  --status-planned-bg: #eaf3ff;
+  --status-planned-bd: #a3bffa;
+
+  --status-ready-fg:   #ac6600;
+  --status-ready-bg:   #fef6e7;
+  --status-ready-bd:   #fdd574;
+
+  --status-impl-fg:    #14866d;
+  --status-impl-bg:    #e6f5ef;
+  --status-impl-bd:    #a6e3cf;
+
+  /* --- Parallel-task [P] marker --- */
+  --marker-parallel-fg: #2a4b8d;
+  --marker-parallel-bg: #d8e3ff;
+
+  /* --- Feedback / message boxes --- */
+  --notice-border:  #36c;
+  --notice-bg:      #eaf3ff;
+  --warning-border: #fc3;
+  --warning-bg:     #fef6e7;
+  --error-border:   #d33;
+  --error-bg:       #fee7e6;
+  --success-border: #14866d;
+  --success-bg:     #e6f5ef;
+
+  /* --- Interactive (progressive button) --- */
+  --button-progressive-bg:       #f8f9fa;
+  --button-progressive-bg-hover: #ffffff;
+  --button-progressive-border:   #a2a9b1;
+  --primary:        #3366cc; /* OOUI progressive accent */
+  --primary-hover:  #447ff5;
+  --primary-active: #2a4b8d;
+  --primary-fg:     #ffffff;
+
+  /* --- Selection / focus --- */
+  --focus-ring:     #3366cc;
+  --selection-bg:   #cbd9f7;
+}

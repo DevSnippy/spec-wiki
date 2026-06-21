@@ -1,0 +1,20 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SpecWiki mark">
+
+  <circle cx="60" cy="60" r="52" fill="#f8f9fa" stroke="#a2a9b1" stroke-width="2"></circle>
+
+  <g stroke="#a2a9b1" stroke-width="1.5" fill="none" opacity="0.9">
+    <ellipse cx="60" cy="60" rx="22" ry="52"></ellipse>
+    <ellipse cx="60" cy="60" rx="44" ry="52"></ellipse>
+    <line x1="8" y1="60" x2="112" y2="60"></line>
+    <path d="M14 38 H106"></path>
+    <path d="M14 82 H106"></path>
+  </g>
+
+  <g stroke="#54595d" stroke-width="2.4" stroke-linecap="round">
+    <line x1="44" y1="48" x2="78" y2="48"></line>
+    <line x1="44" y1="58" x2="84" y2="58"></line>
+    <line x1="44" y1="68" x2="72" y2="68"></line>
+  </g>
+
+  <text x="60" y="103" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#0645ad" font-weight="700">§</text>
+</svg>

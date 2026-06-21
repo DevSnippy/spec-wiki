@@ -1,0 +1,61 @@
+/* ============================================================
+   SpecWiki — Typography
+   Wikipedia uses system font stacks: serif headings/wordmark,
+   sans-serif body, monospace for code & source view.
+   No webfonts are shipped — these are the same OS-native stacks
+   the real Vector skin relies on (serif ≈ Linux Libertine/Georgia).
+   ============================================================ */
+
+/* Linux Libertine is the genuine Vector-skin serif (OFL). We do NOT
+   ship or substitute it: this rule binds the name to a locally
+   installed copy if the user has one, otherwise the font simply
+   doesn't load and the fallback stack below (Georgia → Times) renders —
+   exactly what the real Wikipedia serif does on most machines. Upload a
+   Linux Libertine / Libertinus woff2 and add a url() src here for a
+   pixel-exact wordmark. */
+@font-face {
+  font-family: "Linux Libertine";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local("Linux Libertine"), local("Linux Libertine O"), local("LinLibertine"), local("Libertinus Serif");
+}
+
+:root {
+  /* --- Families --- */
+  --font-serif: "Linux Libertine", "Georgia", "Times New Roman", "Nimbus Roman No9 L", serif;
+  --font-sans:  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-mono:  "Menlo", "Consolas", "Liberation Mono", "Courier New", monospace;
+
+  /* Semantic aliases */
+  --font-wordmark: var(--font-serif); /* logo + Main Page masthead */
+  --font-heading:  var(--font-serif); /* article h1/h2/h3 */
+  --font-body:     var(--font-sans);  /* paragraph + UI chrome */
+  --font-code:     var(--font-mono);  /* code blocks, view-source, task IDs */
+
+  /* --- Type scale (px — Wikipedia's literal sizes) --- */
+  --text-page-title: 28px; /* article <h1>, serif */
+  --text-h2:         24px; /* section heading, serif + underline */
+  --text-h3:         19px;
+  --text-h4:         16px;
+  --text-body:       14px; /* body copy + most chrome */
+  --text-sidebar:    14px;
+  --text-small:      13px; /* infobox, captions, tab labels */
+  --text-tiny:       12px; /* badges, footnotes, metadata */
+  --text-mono:       13px;
+
+  /* --- Line heights --- */
+  --leading-body:    1.6;  /* spec §5 body line-height */
+  --leading-heading: 1.3;
+  --leading-tight:   1.25;
+  --leading-mono:    1.5;
+
+  /* --- Weights --- */
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-bold:     700;
+
+  /* --- Letter spacing --- */
+  --tracking-normal: 0;
+  --tracking-caps:   0.05em; /* small-caps-ish nav labels */
+}

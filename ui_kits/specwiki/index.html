@@ -1,0 +1,60 @@
+<!-- @dsCard group="SpecWiki" viewport="1280x760" name="SpecWiki app" subtitle="Wikipedia-style viewer for Spec Kit projects — full click-through" -->
+<!-- @startingPoint section="SpecWiki" subtitle="Full Spec Kit wiki app shell" viewport="1280x800" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SpecWiki — Taskify Platform</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  html, body { height: 100%; margin: 0; }
+  body { font-family: var(--font-sans); color: var(--color-base-10); background: #fff; }
+  #app { height: 100vh; }
+  * { box-sizing: border-box; }
+  ::selection { background: var(--selection-bg); }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="data.js"></script>
+<script type="text/babel" src="shell.jsx"></script>
+<script type="text/babel" src="screens-main.jsx"></script>
+<script type="text/babel" src="screens-article.jsx"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+  const { AppShell } = window.SpecWikiShell;
+  const { WelcomeScreen, MainPage } = window.SpecWikiMain;
+  const { ArticlePage, AllSpecsPage, RecentChangesPage, SearchPage } = window.SpecWikiArticle;
+  const DATA = window.SPECWIKI_DATA;
+
+  function App() {
+    const [opened, setOpened] = React.useState(false);
+    const [route, setRoute] = React.useState({ page: "main" });
+    const navigate = (r) => setRoute(r);
+
+    if (!opened) return <WelcomeScreen onOpen={() => { setOpened(true); setRoute({ page: "main" }); }} />;
+
+    let content;
+    if (route.page === "main") content = <MainPage data={DATA} navigate={navigate} />;
+    else if (route.page === "article") {
+      const f = DATA.features.find((x) => x.slug === route.slug) || DATA.features[0];
+      content = <ArticlePage feature={f} route={route} navigate={navigate} isGitRepo={DATA.project.isGitRepo} />;
+    }
+    else if (route.page === "special" && route.which === "recent") content = <RecentChangesPage data={DATA} navigate={navigate} />;
+    else if (route.page === "special" && route.which === "search") content = <SearchPage data={DATA} navigate={navigate} />;
+    else content = <AllSpecsPage data={DATA} navigate={navigate} />;
+
+    return (
+      <AppShell features={DATA.features} route={route} navigate={navigate} onClose={() => setOpened(false)}>
+        {content}
+      </AppShell>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("app")).render(<App />);
+</script>
+</body>
+</html>

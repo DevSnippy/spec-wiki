@@ -1,0 +1,9 @@
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+
+html, body { height: 100%; margin: 0; }
+body { font-family: var(--font-sans); color: var(--color-base-10); background: #fff; }
+#app { height: 100vh; }
+* { box-sizing: border-box; }
+::selection { background: var(--selection-bg); }

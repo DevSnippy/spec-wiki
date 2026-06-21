@@ -1,0 +1,8 @@
+/* ============================================================
+   SpecWiki — Global stylesheet entry point.
+   Consumers link THIS file. It is a manifest of @imports only —
+   no rules live here directly.
+   ============================================================ */
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";

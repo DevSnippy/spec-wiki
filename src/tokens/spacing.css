@@ -1,0 +1,42 @@
+:root {
+  --space-0:  0;
+  --space-1:  2px;
+  --space-2:  4px;
+  --space-3:  6px;
+  --space-4:  8px;
+  --space-5:  10px;
+  --space-6:  12px;
+  --space-8:  16px;
+  --space-10: 20px;
+  --space-12: 24px;
+  --space-16: 32px;
+  --space-20: 40px;
+  --space-24: 48px;
+
+  --gap-inline:    6px;
+  --gap-stack:     12px;
+  --pad-box:       12px;
+  --pad-content-x: 32px;
+  --pad-content-y: 20px;
+
+  --sidebar-width:  220px;
+  --content-max:    960px;
+  --toc-max:        320px;
+  --topbar-height:  50px;
+  --search-height:  32px;
+  --search-radius:  2px;
+
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   3px;
+  --radius-pill: 999px;
+
+  --border-width:     1px;
+  --border-width-tab: 2px;
+  --rule-width:       1px;
+
+  --shadow-none:         none;
+  --shadow-dropdown:     0 2px 3px 1px rgba(0,0,0,0.12);
+  --shadow-modal:        0 6px 24px rgba(0,0,0,0.28);
+  --shadow-search-focus: inset 0 0 0 1px #3366cc;
+}

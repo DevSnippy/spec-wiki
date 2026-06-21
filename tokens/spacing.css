@@ -1,0 +1,54 @@
+/* ============================================================
+   SpecWiki — Spacing
+   Wikipedia's layout is built on tight, document-like rhythm.
+   Base unit = 4px. Plus the fixed structural dimensions from
+   the spec (sidebar width, content max-width, TOC).
+   ============================================================ */
+:root {
+  /* --- Spacing scale (4px base) --- */
+  --space-0:  0;
+  --space-1:  2px;
+  --space-2:  4px;
+  --space-3:  6px;
+  --space-4:  8px;
+  --space-5:  10px;
+  --space-6:  12px;
+  --space-8:  16px;
+  --space-10: 20px;
+  --space-12: 24px;
+  --space-16: 32px;
+  --space-20: 40px;
+  --space-24: 48px;
+
+  /* Semantic spacing */
+  --gap-inline:     6px;  /* between inline chrome items */
+  --gap-stack:      12px; /* paragraph rhythm */
+  --pad-box:        12px; /* sidebar box / infobox padding */
+  --pad-content-x:  32px; /* article column horizontal padding */
+  --pad-content-y:  20px;
+
+  /* --- Fixed structural dimensions (spec §5) --- */
+  --sidebar-width:   220px;
+  --content-max:     960px;
+  --toc-max:         320px;
+  --topbar-height:   50px;
+  --search-height:   32px;
+  --search-radius:   2px;
+
+  /* --- Radii (Wikipedia is nearly square) --- */
+  --radius-none: 0;
+  --radius-xs:   2px;  /* search box, buttons, badges */
+  --radius-sm:   3px;  /* infobox, message boxes */
+  --radius-pill: 999px;
+
+  /* --- Borders --- */
+  --border-width:      1px;
+  --border-width-tab:  2px; /* active article tab underline */
+  --rule-width:        1px; /* heading underlines */
+
+  /* --- Shadows (used sparingly — dropdowns, modals only) --- */
+  --shadow-none: none;
+  --shadow-dropdown: 0 2px 3px 1px rgba(0,0,0,0.12);
+  --shadow-modal:    0 6px 24px rgba(0,0,0,0.28);
+  --shadow-search-focus: inset 0 0 0 1px #3366cc;
+}
