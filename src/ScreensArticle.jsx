@@ -234,7 +234,7 @@ function ArticleBody({ feature, sub }) {
           style={{ float:"none", margin:0, width:"100%" }}
         />
         {tocHeadings.length > 0 && (
-          <TableOfContents onSelect={() => {}} headings={tocHeadings} style={{ maxWidth:"100%" }} />
+          <TableOfContents onSelect={id => document.getElementById(id)?.scrollIntoView({ behavior:"smooth" })} headings={tocHeadings} style={{ maxWidth:"100%" }} />
         )}
       </div>
     </div>
