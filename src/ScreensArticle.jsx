@@ -365,8 +365,8 @@ export function SearchPage({ data, navigate, route }) {
         f.title.toLowerCase().includes(q) ||
         f.summary.toLowerCase().includes(q) ||
         f.slug.toLowerCase().includes(q) ||
-        f.stories.some(s => s.toLowerCase().includes(q)) ||
-        f.requirements.some(r => r.toLowerCase().includes(q))
+        f.stories.some(s => s.title?.toLowerCase().includes(q) || s.summary?.toLowerCase().includes(q)) ||
+        f.requirements.some(r => r.text?.toLowerCase().includes(q))
       )
     : [];
 

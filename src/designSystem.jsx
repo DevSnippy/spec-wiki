@@ -200,8 +200,11 @@ export function Button({ variant = "normal", size = "md", icon, children, onClic
 }
 
 /* ---- SearchBox ---- */
-export function SearchBox({ placeholder = "Search this project", value, onChange, onSubmit, width = 280, style }) {
+export function SearchBox({ placeholder = "Search this project", value: valueProp, onChange, onSubmit, width = 280, style }) {
   const [focused, setFocused] = useState(false);
+  const [internalValue, setInternalValue] = useState("");
+  const isControlled = valueProp !== undefined;
+  const value = isControlled ? valueProp : internalValue;
   return (
     <form onSubmit={e => { e.preventDefault(); onSubmit && onSubmit(value); }}
       style={{ display:"flex", alignItems:"center", width, height:"var(--search-height)", background:"#fff", border:`1px solid ${focused?"var(--focus-ring)":"var(--border-default)"}`, boxShadow:focused?"inset 0 0 0 1px var(--focus-ring)":"none", borderRadius:"var(--search-radius)", padding:"0 8px", transition:"border-color 100ms, box-shadow 100ms", ...style }}>
@@ -211,7 +214,7 @@ export function SearchBox({ placeholder = "Search this project", value, onChange
         </svg>
       </span>
       <input type="text" value={value} placeholder={placeholder}
-        onChange={e => onChange && onChange(e.target.value)}
+        onChange={e => { if (!isControlled) setInternalValue(e.target.value); onChange && onChange(e.target.value); }}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         style={{ flex:1, border:"none", outline:"none", background:"transparent", fontFamily:"var(--font-sans)", fontSize:"14px", color:"var(--color-base-10)" }} />
